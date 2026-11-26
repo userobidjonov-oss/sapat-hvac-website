@@ -55,7 +55,7 @@
 
   /* Layout */
   --max-w:     1280px;
-  --pad-x:     1.5rem;
+  --pad-x:     2rem;
   --section-y: 5rem;
 
   /* Navbar */
@@ -710,7 +710,7 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
   box-shadow: var(--sh-lg);
 }
 
-.hero__badge:first-of-type {
+.hero__badge:not(.hero__badge--alt) {
   bottom: var(--sp-8);
   left: calc(-1 * var(--sp-8));
 }
@@ -2124,9 +2124,6 @@ body:not(.light-mode) .form-success div {
 @media (max-width: 1200px) {
   :root { --pad-x: 2rem; }
 
-  .hero__badge:not(.hero__badge--alt) { left: var(--sp-4); }
-  .hero__badge--alt          { right: var(--sp-4); }
-
   .why-us__inner { grid-template-columns: 300px 1fr; gap: var(--sp-12); }
   .faq__inner    { grid-template-columns: 240px 1fr; gap: var(--sp-12); }
 }
@@ -2852,4 +2849,15 @@ html[lang="ar"] .hero__headline { line-height: 1.25; }
 @media (min-width: 769px) and (max-width: 1440px) {
   .floating-contact { right: max(14px, env(safe-area-inset-right)); }
   [dir="rtl"] .floating-contact { right: auto; left: max(14px, env(safe-area-inset-left)); }
+}
+
+/* Hero badges: mirror in RTL; below 1400px keep them inside the photo so they
+   never sit against the screen edge or poke into the gap next to the text. */
+[dir="rtl"] .hero__badge:not(.hero__badge--alt) { left: auto; right: calc(-1 * var(--sp-8)); }
+[dir="rtl"] .hero__badge--alt { right: auto; left: calc(-1 * var(--sp-8)); }
+@media (max-width: 1400px) {
+  .hero__badge:not(.hero__badge--alt) { left: var(--sp-4); right: auto; }
+  .hero__badge--alt { right: var(--sp-4); left: auto; }
+  [dir="rtl"] .hero__badge:not(.hero__badge--alt) { right: var(--sp-4); left: auto; }
+  [dir="rtl"] .hero__badge--alt { left: var(--sp-4); right: auto; }
 }
