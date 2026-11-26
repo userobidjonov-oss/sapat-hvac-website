@@ -1,3 +1,18 @@
+/* i18n helper: pages in /ar/ and /ru/ define window.I18N (built by tools/i18n_build.py). */
+const T = (text) => (window.I18N && window.I18N[text]) || text;
+
+/* Localised WhatsApp greeting on quick-contact links. */
+document.addEventListener('DOMContentLoaded', () => {
+  const greeting = T('Hello Sapat, I would like a quote.');
+  document.querySelectorAll('a[href^="https://wa.me/"]').forEach((a) => {
+    a.href = a.href.split('?')[0] + '?text=' + encodeURIComponent(greeting);
+  });
+  const lang = document.documentElement.lang || 'en';
+  document.querySelectorAll('.lang-switch a[data-lang]').forEach((a) => {
+    if (a.dataset.lang === lang) a.setAttribute('aria-current', 'true');
+  });
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.body;
   const navbar = document.getElementById('navbar');
@@ -13,9 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
     body.classList.toggle('light-mode', isLight);
     if (themeToggle) {
       themeToggle.setAttribute('aria-pressed', String(isLight));
-      themeToggle.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
+      themeToggle.setAttribute('aria-label', isLight ? T('Switch to dark mode') : T('Switch to light mode'));
       const label = themeToggle.querySelector('.theme-toggle__text');
-      if (label) label.textContent = isLight ? 'Dark' : 'Light';
+      if (label) label.textContent = isLight ? T('Dark') : T('Light');
     }
     window.localStorage.setItem('sapat-theme', isLight ? 'light' : 'dark');
   };
@@ -247,28 +262,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const message = document.getElementById('message');
 
     if (!name || !name.value.trim() || name.value.trim().length < 2) {
-      setError('fullName', 'Please enter your full name.');
+      setError('fullName', T('Please enter your full name.'));
       isValid = false;
     } else {
       clearError('fullName');
     }
 
     if (!phone || !phone.value.trim() || !/^\+?[0-9\s()-]{7,}$/.test(phone.value.trim())) {
-      setError('phone', 'Please enter a valid phone number.');
+      setError('phone', T('Please enter a valid phone number.'));
       isValid = false;
     } else {
       clearError('phone');
     }
 
-    if (!email || !email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
-      setError('email', 'Please enter a valid email address.');
+    // Email is optional; validate only when filled in.
+    if (email && email.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
+      setError('email', T('Please enter a valid email address.'));
       isValid = false;
     } else {
       clearError('email');
     }
 
     if (!message || !message.value.trim() || message.value.trim().length < 10) {
-      setError('message', 'Please share a few details about your project.');
+      setError('message', T('Please share a few details about your project.'));
       isValid = false;
     } else {
       clearError('message');
@@ -284,20 +300,31 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    submitBtn?.setAttribute('disabled', 'disabled');
-    const btnLabel = submitBtn?.querySelector('.btn-label');
-    const btnLoading = submitBtn?.querySelector('.btn-loading');
+    // No backend: the request is sent to the company WhatsApp with the form details prefilled.
+    const WHATSAPP_NUMBER = '971501357591';
+    const value = (id) => (document.getElementById(id)?.value || '').trim();
+    const serviceSelect = document.getElementById('service');
+    const serviceText = serviceSelect && serviceSelect.value
+      ? serviceSelect.options[serviceSelect.selectedIndex].text
+      : T('Not specified');
 
-    if (btnLabel) btnLabel.hidden = true;
-    if (btnLoading) btnLoading.hidden = false;
+    const lines = [
+      T('New request from the website'),
+      `${T('Name')}: ${value('fullName')}`,
+      `${T('Phone')}: ${value('phone')}`,
+      value('email') ? `${T('Email')}: ${value('email')}` : null,
+      `${T('Service')}: ${serviceText}`,
+      `${T('Message')}: ${value('message')}`
+    ].filter(Boolean);
 
-    window.setTimeout(() => {
-      form.reset();
-      formSuccess?.removeAttribute('hidden');
-      if (btnLabel) btnLabel.hidden = false;
-      if (btnLoading) btnLoading.hidden = true;
-      submitBtn?.removeAttribute('disabled');
-    }, 900);
+    const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`;
+    const opened = window.open(waUrl, '_blank', 'noopener');
+    if (!opened) {
+      window.location.href = waUrl;
+    }
+
+    formSuccess?.removeAttribute('hidden');
+    form.reset();
   });
 
   const footerYear = document.getElementById('footerYear');
@@ -305,3 +332,126 @@ document.addEventListener('DOMContentLoaded', () => {
     footerYear.textContent = new Date().getFullYear();
   }
 });
+
+/* ================================================================
+   UPDATE 2026-11-24: motion, reels carousel
+================================================================ */
+(() => {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hasIO = 'IntersectionObserver' in window;
+
+  /* Scroll progress bar */
+  const progress = document.querySelector('.scroll-progress');
+  /* Subtle hero parallax */
+  const heroImg = document.querySelector('.hero__image-wrapper');
+  const wide = window.matchMedia('(min-width: 1025px)');
+  let ticking = false;
+  const onScroll = () => {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(() => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      if (progress) progress.style.transform = `scaleX(${max > 0 ? window.scrollY / max : 0})`;
+      if (heroImg && !reduceMotion && wide.matches && window.scrollY < window.innerHeight) {
+        heroImg.style.transform = `translateY(${window.scrollY * 0.06}px)`;
+      } else if (heroImg && !wide.matches) {
+        heroImg.style.transform = '';
+      }
+      ticking = false;
+    });
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* Staggered grids */
+  if (!reduceMotion && hasIO) {
+    document.documentElement.classList.add('js-motion');
+    const groups = document.querySelectorAll(
+      '.services__grid, .projects__grid, .why-us__items, .process__timeline, .stats__grid, .trust-strip__list, .about__highlights'
+    );
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    groups.forEach((group) => {
+      group.setAttribute('data-stagger', '');
+      Array.from(group.children).forEach((child, i) => child.style.setProperty('--i', i));
+      io.observe(group);
+    });
+  }
+
+  /* Reels: play muted clips only while visible */
+  const videos = Array.from(document.querySelectorAll('video[data-autoplay]'));
+  if (reduceMotion || !hasIO) {
+    videos.forEach((v) => { v.controls = true; });
+  } else {
+    const vio = new IntersectionObserver((entries) => {
+      entries.forEach(({ target, isIntersecting }) => {
+        if (isIntersecting) {
+          target.preload = 'auto';
+          target.play().catch(() => { target.controls = true; });
+        } else {
+          target.pause();
+        }
+      });
+    }, { threshold: 0.5 });
+    videos.forEach((v) => vio.observe(v));
+  }
+
+  /* Reels: arrows + progress */
+  const track = document.querySelector('.work__track');
+  if (track) {
+    const arrows = document.querySelectorAll('.work__arrow');
+    const bar = document.querySelector('.work__progress-bar');
+    const rtl = () => getComputedStyle(track).direction === 'rtl';
+    const update = () => {
+      const max = track.scrollWidth - track.clientWidth;
+      const pos = Math.abs(track.scrollLeft);
+      const ratio = max > 0 ? pos / max : 1;
+      if (bar) bar.style.transform = `scaleX(${Math.max(0.08, track.clientWidth / track.scrollWidth + ratio * (1 - track.clientWidth / track.scrollWidth))})`;
+      arrows.forEach((a) => {
+        const dir = Number(a.dataset.dir);
+        a.disabled = dir < 0 ? pos <= 2 : pos >= max - 2;
+      });
+    };
+    const phone = window.matchMedia('(max-width: 768px)');
+    const reels = Array.from(track.querySelectorAll('.reel'));
+    let moving = false; let movingTimer = 0;
+    const centredIndex = () => {
+      const mid = track.getBoundingClientRect().left + track.clientWidth / 2;
+      let best = 0; let bestDist = Infinity;
+      reels.forEach((r, i) => {
+        const b = r.getBoundingClientRect();
+        const d = Math.abs(b.left + b.width / 2 - mid);
+        if (d < bestDist) { bestDist = d; best = i; }
+      });
+      return best;
+    };
+    arrows.forEach((a) => a.addEventListener('click', () => {
+      if (phone.matches && reels.length) {
+        /* Phones: one tap = next/previous card, centred on screen.
+           Taps during the short slide animation are ignored so every tap moves exactly one card. */
+        if (moving) return;
+        const to = Math.min(reels.length - 1, Math.max(0, centredIndex() + Number(a.dataset.dir)));
+        const b = reels[to].getBoundingClientRect();
+        const t = track.getBoundingClientRect();
+        moving = true;
+        clearTimeout(movingTimer);
+        movingTimer = setTimeout(() => { moving = false; }, reduceMotion ? 0 : 450);
+        track.scrollBy({ left: (b.left + b.width / 2) - (t.left + track.clientWidth / 2), behavior: reduceMotion ? 'auto' : 'smooth' });
+        return;
+      }
+      const card = track.querySelector('.reel');
+      const cardW = card ? card.getBoundingClientRect().width + 16 : 280;
+      const step = Math.max(cardW, Math.floor(track.clientWidth / cardW) * cardW - cardW);
+      track.scrollBy({ left: Number(a.dataset.dir) * step * (rtl() ? -1 : 1), behavior: reduceMotion ? 'auto' : 'smooth' });
+    }));
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  }
+})();

@@ -3,19 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sapat Climate Solutions — Premium HVAC, ventilation, and air conditioning engineering services in Dubai, UAE. Dubai Municipality approved, 10+ years experience, 500+ completed projects.">
-  <meta name="keywords" content="HVAC Dubai, air conditioning UAE, VRV VRF systems, ventilation engineering, smoke extraction Dubai, MEP contractor UAE">
-  <meta property="og:title" content="Sapat Climate Solutions | HVAC & Ventilation Engineering — Dubai, UAE">
-  <meta property="og:description" content="Premium HVAC, ventilation and air conditioning engineering services in Dubai, UAE. Municipality approved. Free site survey.">
+  <meta name="description" content="Sapat: licensed HVAC, AC maintenance, MEP and fit-out services in Dubai, UAE. Free site survey, 24/7 emergency support. Call or WhatsApp +971 50 135 7591.">
+  <meta name="keywords" content="AC repair Dubai, AC maintenance Dubai, HVAC company Dubai, AC installation Deira, VRV VRF Dubai, ventilation Dubai, MEP maintenance Dubai, AMC Dubai">
+  <meta property="og:title" content="Sapat | HVAC, AC &amp; Technical Services in Dubai">
+  <meta property="og:description" content="Licensed HVAC, AC maintenance, MEP and fit-out services in Dubai. Free site survey. 24/7 emergency support.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://apexclimate.ae">
-  <title>Sapat Climate Solutions | HVAC & Ventilation Engineering — Dubai, UAE</title>
+  <meta property="og:url" content="https://userobidjonov-oss.github.io/sapat-hvac-website/">
+  <title>Sapat | HVAC, AC &amp; Technical Services in Dubai, UAE</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="alternate" hreflang="en" href="https://userobidjonov-oss.github.io/sapat-hvac-website/">
+  <link rel="alternate" hreflang="ar" href="https://userobidjonov-oss.github.io/sapat-hvac-website/ar/">
+  <link rel="alternate" hreflang="ru" href="https://userobidjonov-oss.github.io/sapat-hvac-website/ru/">
+  <link rel="stylesheet" href="css/style.css?v=20261126d">
+  <script>
+    /* Enable entrance animations before first paint (skipped for reduced motion). */
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('js-motion');
+    }
+  </script>
 </head>
 <body>
+<div class="scroll-progress" aria-hidden="true"></div>
 
 <!-- ============================================================
      SKIP LINK
@@ -28,13 +38,13 @@
 <nav id="navbar" class="navbar" role="navigation" aria-label="Main navigation">
   <div class="container navbar__inner">
 
-    <a href="#hero" class="navbar__logo" aria-label="Sapat Engineering — Home">
+    <a href="#hero" class="navbar__logo" aria-label="Sapat home">
       <span class="brand-mark" aria-hidden="true">
         <img src="images/sapat-icon.webp" alt="">
       </span>
       <span class="brand-copy">
-        <span class="brand-name">Sapat Engineering</span>
-        <span class="brand-sub">HVAC &amp; Ventilation &bull; Dubai</span>
+        <span class="brand-name">Sapat</span>
+        <span class="brand-sub">HVAC &amp; Technical Services &bull; Dubai</span>
       </span>
     </a>
 
@@ -42,23 +52,32 @@
       <li><a href="#services"  class="nav-link">Services</a></li>
       <li><a href="#about"     class="nav-link">About</a></li>
       <li><a href="#projects"  class="nav-link">Projects</a></li>
+      <li><a href="#work"      class="nav-link">Our Work</a></li>
       <li><a href="#process"   class="nav-link">Process</a></li>
       <li><a href="#faq"       class="nav-link">FAQ</a></li>
       <li><a href="#contact"   class="nav-link">Contact</a></li>
     </ul>
 
-    <a href="#contact" class="btn btn--primary navbar__cta">Get a Free Quote</a>
+    <div class="navbar__tools">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <a href="./" data-lang="en" lang="en">EN</a>
+        <a href="ar/" data-lang="ar" lang="ar">عربي</a>
+        <a href="ru/" data-lang="ru" lang="ru">RU</a>
+      </div>
 
-    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
-      <svg class="theme-toggle__icon theme-toggle__icon--sun" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/>
-        <path d="M12 2V4M12 20V22M4.93 4.93L6.34 6.34M17.66 17.66L19.07 19.07M2 12H4M20 12H22M4.93 19.07L6.34 17.66M17.66 6.34L19.07 4.93" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-      </svg>
-      <svg class="theme-toggle__icon theme-toggle__icon--moon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M20.5 15.2A8.5 8.5 0 0 1 8.8 3.5 8.5 8.5 0 1 0 20.5 15.2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-      </svg>
-      <span class="theme-toggle__text">Light</span>
-    </button>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/>
+          <path d="M12 2V4M12 20V22M4.93 4.93L6.34 6.34M17.66 17.66L19.07 19.07M2 12H4M20 12H22M4.93 19.07L6.34 17.66M17.66 6.34L19.07 4.93" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M20.5 15.2A8.5 8.5 0 0 1 8.8 3.5 8.5 8.5 0 1 0 20.5 15.2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+        </svg>
+        <span class="theme-toggle__text sr-only">Light</span>
+      </button>
+    </div>
+
+    <a href="#contact" class="btn btn--primary navbar__cta">Get a Free Quote</a>
 
     <button
       class="navbar__toggle"
@@ -90,11 +109,19 @@
     <li><a href="#services"  class="mobile-link">Services</a></li>
     <li><a href="#about"     class="mobile-link">About</a></li>
     <li><a href="#projects"  class="mobile-link">Projects</a></li>
+    <li><a href="#work"      class="mobile-link">Our Work</a></li>
     <li><a href="#process"   class="mobile-link">Process</a></li>
     <li><a href="#faq"       class="mobile-link">FAQ</a></li>
     <li><a href="#contact"   class="mobile-link">Contact</a></li>
   </ul>
   <a href="#contact" class="btn btn--primary mobile-menu__cta">Get a Free Quote</a>
+  <div class="lang-switch lang-switch--mobile" role="group" aria-label="Language">
+      <a href="./" data-lang="en" lang="en">EN</a>
+      <a href="ar/" data-lang="ar" lang="ar">عربي</a>
+      <a href="ru/" data-lang="ru" lang="ru">RU</a>
+    </div>
+
+
 </nav>
 
 <!-- ============================================================
@@ -119,9 +146,16 @@
       </h1>
 
       <p class="hero__sub">
-        We design, engineer, and install precision climate control systems for commercial,
-        residential, and industrial projects across the UAE.
+        Installation, repair and maintenance of air conditioning, ventilation and MEP systems
+        for villas, apartments, offices, restaurants and commercial buildings across Dubai.
       </p>
+
+      <nav class="hero__chips" aria-label="Popular services">
+        <a href="#service-amc" class="hero__chip">AC Service</a>
+        <a href="#service-ac" class="hero__chip">AC Repair &amp; Installation</a>
+        <a href="#service-amc" class="hero__chip">Maintenance Contracts</a>
+        <a href="#service-fitout" class="hero__chip">Fit-Out Works</a>
+      </nav>
 
       <div class="hero__actions">
         <a href="#contact" class="btn btn--primary btn--lg" id="hero-cta-primary">
@@ -140,7 +174,7 @@
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
             <path d="M7 1L8.8 5H13L9.6 7.5L11 12L7 9.5L3 12L4.4 7.5L1 5H5.2L7 1Z" fill="#6EAA4B"/>
           </svg>
-          Municipality Approved
+          Dubai Licensed Company
         </div>
         <div class="hero__trust-divider" aria-hidden="true"></div>
         <div class="hero__trust-item" role="listitem">
@@ -148,7 +182,7 @@
             <circle cx="7" cy="7" r="6" stroke="#6EAA4B" stroke-width="1.3"/>
             <path d="M4.5 7L6 8.5L9.5 5" stroke="#6EAA4B" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          UAE Licensed
+          Free Site Survey
         </div>
         <div class="hero__trust-divider" aria-hidden="true"></div>
         <div class="hero__trust-item" role="listitem">
@@ -173,12 +207,12 @@
         >
         <div class="hero__image-overlay" aria-hidden="true"></div>
         <div class="hero__badge">
-          <span class="hero__badge-num">500+</span>
-          <span class="hero__badge-label">Projects Completed</span>
+          <span class="hero__badge-num">10</span>
+          <span class="hero__badge-label">Licensed Service Lines</span>
         </div>
         <div class="hero__badge hero__badge--alt">
-          <span class="hero__badge-num">10+</span>
-          <span class="hero__badge-label">Years of Excellence</span>
+          <span class="hero__badge-num">24/7</span>
+          <span class="hero__badge-label">Emergency Call-outs</span>
         </div>
       </div>
     </div>
@@ -203,8 +237,8 @@
           </svg>
         </span>
         <div>
-          <strong>Dubai Municipality Approved</strong>
-          <span>Fully certified MEP firm</span>
+          <strong>Dubai DET Licensed</strong>
+          <span>Trade licence No. 1597573</span>
         </div>
       </li>
 
@@ -218,8 +252,8 @@
           </svg>
         </span>
         <div>
-          <strong>UAE Licensed Contractor</strong>
-          <span>Registered trade license</span>
+          <strong>Dubai Chamber Member</strong>
+          <span>Membership No. 669853</span>
         </div>
       </li>
 
@@ -233,8 +267,8 @@
           </svg>
         </span>
         <div>
-          <strong>10+ Years Experience</strong>
-          <span>Trusted HVAC expertise</span>
+          <strong>Skilled Technicians</strong>
+          <span>HVAC &amp; MEP specialists</span>
         </div>
       </li>
 
@@ -248,8 +282,8 @@
           </svg>
         </span>
         <div>
-          <strong>500+ Projects Delivered</strong>
-          <span>Across Dubai &amp; the UAE</span>
+          <strong>One Team, All Trades</strong>
+          <span>HVAC, MEP &amp; fit-out</span>
         </div>
       </li>
 
@@ -294,21 +328,20 @@
 
     <header class="section-header reveal">
       <span class="section-label">What We Do</span>
-      <h2 id="services-heading" class="section-title">Engineering Services</h2>
+      <h2 id="services-heading" class="section-title">Our Services</h2>
       <p class="section-desc">
-        Comprehensive climate engineering solutions for every project type — from single-unit
-        residential installations to large-scale commercial systems.
+        From a single split AC service to full building systems: one licensed team for cooling,
+        ventilation, MEP and maintenance works.
       </p>
     </header>
 
-    <!-- Category: HVAC & Cooling -->
     <div class="services__category reveal">
       <h3 class="services__cat-label">HVAC &amp; Cooling</h3>
       <div class="services__grid">
 
-        <article class="service-card service-card--featured" id="service-hvac">
+        <article class="service-card" id="service-hvac">
           <div class="service-card__img-wrap">
-            <div class="service-card__img-bg service-card__img-bg--hvac" role="img" aria-label="HVAC Engineering installation"></div>
+            <img src="images/services/hvac.webp" alt="HVAC Engineering installation" class="service-card__img" loading="lazy" decoding="async" width="1200" height="670">
             <div class="service-card__overlay" aria-hidden="true"></div>
           </div>
           <div class="service-card__body">
@@ -316,7 +349,7 @@
             <h4 class="service-card__title">HVAC Engineering</h4>
             <p class="service-card__desc">End-to-end design and installation of heating, ventilation, and air conditioning systems — engineered for performance and energy efficiency in UAE conditions.</p>
             <a href="#contact" class="service-card__link" aria-label="Enquire about HVAC Engineering service">
-              Explore Service
+              Request a Quote
               <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
@@ -326,7 +359,7 @@
 
         <article class="service-card" id="service-ac">
           <div class="service-card__img-wrap">
-            <div class="service-card__img-bg service-card__img-bg--ac" role="img" aria-label="Air conditioning system"></div>
+            <img src="images/services/ac.webp" alt="Air conditioning system" class="service-card__img" loading="lazy" decoding="async" width="1200" height="670">
             <div class="service-card__overlay" aria-hidden="true"></div>
           </div>
           <div class="service-card__body">
@@ -334,7 +367,7 @@
             <h4 class="service-card__title">Air Conditioning</h4>
             <p class="service-card__desc">Split, ducted, and central air conditioning systems for residential, commercial, and industrial applications throughout the UAE.</p>
             <a href="#contact" class="service-card__link" aria-label="Enquire about Air Conditioning service">
-              Explore Service
+              Request a Quote
               <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
@@ -352,7 +385,7 @@
             <h4 class="service-card__title">VRV / VRF Systems</h4>
             <p class="service-card__desc">Variable refrigerant systems delivering precise multi-zone climate control with superior energy efficiency for commercial and mixed-use buildings.</p>
             <a href="#contact" class="service-card__link" aria-label="Enquire about VRV VRF Systems service">
-              Explore Service
+              Request a Quote
               <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
@@ -363,14 +396,13 @@
       </div>
     </div>
 
-    <!-- Category: Ventilation & Air Quality -->
     <div class="services__category reveal">
       <h3 class="services__cat-label">Ventilation &amp; Air Quality</h3>
       <div class="services__grid">
 
         <article class="service-card" id="service-ventilation">
           <div class="service-card__img-wrap">
-            <div class="service-card__img-bg service-card__img-bg--ventilation" role="img" aria-label="Industrial ventilation system"></div>
+            <img src="images/services/ventilation.webp" alt="Industrial ventilation system" class="service-card__img" loading="lazy" decoding="async" width="1200" height="670">
             <div class="service-card__overlay" aria-hidden="true"></div>
           </div>
           <div class="service-card__body">
@@ -378,7 +410,7 @@
             <h4 class="service-card__title">Ventilation</h4>
             <p class="service-card__desc">Mechanical and natural ventilation systems designed to maintain optimal indoor air quality, regulatory compliance, and occupant well-being.</p>
             <a href="#contact" class="service-card__link" aria-label="Enquire about Ventilation service">
-              Explore Service
+              Request a Quote
               <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
@@ -388,7 +420,7 @@
 
         <article class="service-card" id="service-dehumid">
           <div class="service-card__img-wrap">
-            <div class="service-card__img-bg service-card__img-bg--dehumid" role="img" aria-label="Dehumidification system in industrial setting"></div>
+            <img src="images/services/dehumid.webp" alt="Dehumidification system in industrial setting" class="service-card__img" loading="lazy" decoding="async" width="1200" height="670">
             <div class="service-card__overlay" aria-hidden="true"></div>
           </div>
           <div class="service-card__body">
@@ -396,7 +428,7 @@
             <h4 class="service-card__title">Dehumidification</h4>
             <p class="service-card__desc">Industrial and commercial dehumidification systems that protect infrastructure, equipment, and occupant comfort against the UAE's humid climate.</p>
             <a href="#contact" class="service-card__link" aria-label="Enquire about Dehumidification service">
-              Explore Service
+              Request a Quote
               <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
@@ -406,7 +438,7 @@
 
         <article class="service-card" id="service-smoke">
           <div class="service-card__img-wrap">
-            <div class="service-card__img-bg service-card__img-bg--smoke" role="img" aria-label="Smoke extraction system installation"></div>
+            <img src="images/services/smoke.webp" alt="Smoke extraction system installation" class="service-card__img" loading="lazy" decoding="async" width="1200" height="670">
             <div class="service-card__overlay" aria-hidden="true"></div>
           </div>
           <div class="service-card__body">
@@ -414,7 +446,7 @@
             <h4 class="service-card__title">Smoke Extraction</h4>
             <p class="service-card__desc">Life-safety smoke extraction and pressurization systems engineered to Dubai Civil Defence standards — ensuring regulatory compliance and occupant protection.</p>
             <a href="#contact" class="service-card__link" aria-label="Enquire about Smoke Extraction service">
-              Explore Service
+              Request a Quote
               <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
@@ -425,14 +457,13 @@
       </div>
     </div>
 
-    <!-- Category: Building Systems -->
     <div class="services__category reveal">
       <h3 class="services__cat-label">Building Systems</h3>
-      <div class="services__grid services__grid--two">
+      <div class="services__grid">
 
         <article class="service-card" id="service-plumbing">
           <div class="service-card__img-wrap">
-            <div class="service-card__img-bg service-card__img-bg--plumbing" role="img" aria-label="Commercial plumbing installation"></div>
+            <img src="images/services/plumbing.webp" alt="Commercial plumbing installation" class="service-card__img" loading="lazy" decoding="async" width="1200" height="670">
             <div class="service-card__overlay" aria-hidden="true"></div>
           </div>
           <div class="service-card__body">
@@ -440,7 +471,7 @@
             <h4 class="service-card__title">Plumbing</h4>
             <p class="service-card__desc">Complete commercial and residential plumbing systems — water supply, drainage, and sanitary installations built to UAE building code and authority requirements.</p>
             <a href="#contact" class="service-card__link" aria-label="Enquire about Plumbing service">
-              Explore Service
+              Request a Quote
               <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
@@ -450,7 +481,7 @@
 
         <article class="service-card" id="service-heating">
           <div class="service-card__img-wrap">
-            <div class="service-card__img-bg service-card__img-bg--heating" role="img" aria-label="Heating system installation"></div>
+            <img src="images/services/heating.webp" alt="Heating system installation" class="service-card__img" loading="lazy" decoding="async" width="1200" height="670">
             <div class="service-card__overlay" aria-hidden="true"></div>
           </div>
           <div class="service-card__body">
@@ -458,7 +489,86 @@
             <h4 class="service-card__title">Heating</h4>
             <p class="service-card__desc">District heating connections, boiler systems, and underfloor heating for projects requiring year-round thermal comfort in the UAE winter season.</p>
             <a href="#contact" class="service-card__link" aria-label="Enquire about Heating service">
-              Explore Service
+              Request a Quote
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="service-card" id="service-electrical">
+          <div class="service-card__img-wrap">
+            <img src="images/services/electrical.webp" alt="Electrical Works" class="service-card__img" loading="lazy" decoding="async" width="1200" height="670">
+            <div class="service-card__overlay" aria-hidden="true"></div>
+          </div>
+          <div class="service-card__body">
+            <span class="service-card__cat">Electrical</span>
+            <h4 class="service-card__title">Electrical Works</h4>
+            <p class="service-card__desc">Repair and maintenance of electrical fittings and fixtures, lighting, sockets and electromechanical equipment.</p>
+            <a href="#contact" class="service-card__link" aria-label="Enquire about Electrical Works">
+              Request a Quote
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <div class="services__category reveal">
+      <h3 class="services__cat-label">Maintenance &amp; Fit-Out</h3>
+      <div class="services__grid">
+
+        <article class="service-card" id="service-amc">
+          <div class="service-card__img-wrap">
+            <img src="images/services/amc.webp" alt="AC Maintenance and AMC" class="service-card__img" loading="lazy" decoding="async" width="1200" height="670">
+            <div class="service-card__overlay" aria-hidden="true"></div>
+          </div>
+          <div class="service-card__body">
+            <span class="service-card__cat">Maintenance</span>
+            <h4 class="service-card__title">AC Maintenance &amp; AMC</h4>
+            <p class="service-card__desc">Scheduled AC cleaning, gas top-up, filter and coil cleaning, and Annual Maintenance Contracts for homes, offices and buildings.</p>
+            <a href="#contact" class="service-card__link" aria-label="Enquire about AC Maintenance and AMC">
+              Request a Quote
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="service-card" id="service-fitout">
+          <div class="service-card__img-wrap">
+            <img src="images/services/fitout.webp" alt="Painting, Plaster and Tiling" class="service-card__img" loading="lazy" decoding="async" width="1200" height="670">
+            <div class="service-card__overlay" aria-hidden="true"></div>
+          </div>
+          <div class="service-card__body">
+            <span class="service-card__cat">Fit-Out</span>
+            <h4 class="service-card__title">Painting, Plaster &amp; Tiling</h4>
+            <p class="service-card__desc">Interior painting, gypsum and plaster works, floor and wall tiling, carpentry and wood flooring for villas, apartments and offices.</p>
+            <a href="#contact" class="service-card__link" aria-label="Enquire about Painting, Plaster and Tiling">
+              Request a Quote
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="service-card" id="service-cleaning">
+          <div class="service-card__img-wrap">
+            <img src="images/services/cleaning.webp" alt="Building Cleaning" class="service-card__img" loading="lazy" decoding="async" width="1200" height="670">
+            <div class="service-card__overlay" aria-hidden="true"></div>
+          </div>
+          <div class="service-card__body">
+            <span class="service-card__cat">Cleaning</span>
+            <h4 class="service-card__title">Building Cleaning</h4>
+            <p class="service-card__desc">Professional cleaning for buildings and homes, including post-installation and post-renovation clean-up.</p>
+            <a href="#contact" class="service-card__link" aria-label="Enquire about Building Cleaning">
+              Request a Quote
               <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
@@ -481,27 +591,27 @@
     <div class="about__visual reveal">
       <img
         src="images/about-team.jpg"
-        alt="Sapat Engineering team reviewing HVAC engineering drawings and project plans"
+        alt="Sapat team reviewing HVAC drawings and project plans"
         class="about__img"
         loading="lazy"
         width="560"
         height="680"
       >
       <div class="about__exp-badge" aria-hidden="true">
-        <span class="exp-num">10+</span>
-        <span class="exp-label">Years of Engineering<br>Excellence</span>
+        <span class="exp-num">10</span>
+        <span class="exp-label">Licensed<br>Service Lines</span>
       </div>
     </div>
 
     <div class="about__content reveal">
       <span class="section-label section-label--accent">About Us</span>
       <h2 id="about-heading" class="section-title section-title--light">
-        Dubai's Trusted Climate<br>Engineering Partner
+        Your Technical Services<br>Partner in Dubai
       </h2>
       <p class="about__intro">
-        Since our founding, Sapat Engineering has delivered precision HVAC and MEP solutions
-        across Dubai and the wider UAE. We combine deep local knowledge with international
-        engineering standards to deliver systems that perform reliably in the Gulf's demanding conditions.
+        Sapat is a Dubai-licensed company based in Deira, providing air conditioning, ventilation,
+        MEP and fit-out services. Our technicians install, repair and maintain systems built to perform
+        in the Gulf's heat, with one point of contact for every trade.
       </p>
 
       <div class="about__highlights">
@@ -512,8 +622,8 @@
             </svg>
           </div>
           <div>
-            <strong>Municipality Approved Engineering</strong>
-            <p>All designs meet Dubai Municipality and civil defence requirements. We manage the full submission process.</p>
+            <strong>Licensed &amp; Compliant</strong>
+            <p>Licensed by Dubai DET. We work to Dubai Municipality and Civil Defence requirements and coordinate approvals where needed.</p>
           </div>
         </div>
         <div class="about__highlight">
@@ -557,7 +667,7 @@
   <div class="container why-us__inner">
 
     <div class="why-us__statement reveal">
-      <span class="section-label">Why Sapat Engineering</span>
+      <span class="section-label">Why Sapat</span>
       <h2 id="why-heading" class="section-title">Engineering You Can<br>Depend On</h2>
       <p class="why-us__intro">
         We don't just install equipment. We engineer complete climate solutions that perform
@@ -569,8 +679,8 @@
       <div class="why-item" tabindex="0">
         <span class="why-item__num" aria-hidden="true">01</span>
         <div class="why-item__content">
-          <h3 class="why-item__title">Municipality Approved</h3>
-          <p class="why-item__desc">Every project is designed and submitted in full compliance with Dubai Municipality regulations and civil defence standards.</p>
+          <h3 class="why-item__title">Licensed &amp; Compliant</h3>
+          <p class="why-item__desc">A Dubai DET licensed company. Work is carried out to Dubai Municipality and Civil Defence standards, with approvals coordinated where required.</p>
         </div>
       </div>
       <div class="why-item" tabindex="0">
@@ -590,8 +700,8 @@
       <div class="why-item" tabindex="0">
         <span class="why-item__num" aria-hidden="true">04</span>
         <div class="why-item__content">
-          <h3 class="why-item__title">Senior Engineers</h3>
-          <p class="why-item__desc">All projects are led by experienced MEP engineers with specialist knowledge of UAE climate conditions and building codes.</p>
+          <h3 class="why-item__title">Skilled Technicians</h3>
+          <p class="why-item__desc">Our HVAC and MEP technicians know UAE climate conditions and building requirements, from villas to commercial sites.</p>
         </div>
       </div>
       <div class="why-item" tabindex="0">
@@ -620,23 +730,23 @@
   <div class="container stats__grid">
 
     <div class="stat-item reveal">
-      <span class="stat-num" data-target="10" data-suffix="+" aria-label="10 plus years experience">10+</span>
-      <span class="stat-label">Years Experience</span>
+      <span class="stat-num" data-target="10" aria-label="10 licensed service lines">10</span>
+      <span class="stat-label">Licensed Service Lines</span>
     </div>
 
     <div class="stat-item reveal" style="transition-delay:0.1s">
-      <span class="stat-num" data-target="500" data-suffix="+" aria-label="500 plus projects completed">500+</span>
-      <span class="stat-label">Projects Completed</span>
+      <span class="stat-num" data-target="24" data-suffix="/7" aria-label="24/7 emergency support">24/7</span>
+      <span class="stat-label">Emergency Support</span>
     </div>
 
     <div class="stat-item reveal" style="transition-delay:0.2s">
-      <span class="stat-num" data-target="8" aria-label="8 service types">8</span>
-      <span class="stat-label">Service Types</span>
+      <span class="stat-num" data-target="6" aria-label="6 working days a week">6</span>
+      <span class="stat-label">Working Days a Week</span>
     </div>
 
     <div class="stat-item reveal" style="transition-delay:0.3s">
-      <span class="stat-num" data-target="100" data-suffix="%" aria-label="100 percent client satisfaction">100%</span>
-      <span class="stat-label">Client Satisfaction</span>
+      <span class="stat-num" data-target="0" data-suffix=" AED" aria-label="0 AED site survey fee">0 AED</span>
+      <span class="stat-label">Site Survey Fee</span>
     </div>
 
   </div>
@@ -649,10 +759,10 @@
   <div class="container">
 
     <header class="section-header reveal">
-      <span class="section-label">Our Work</span>
-      <h2 id="projects-heading" class="section-title">Featured Projects</h2>
+      <span class="section-label">What We Deliver</span>
+      <h2 id="projects-heading" class="section-title">Project Types</h2>
       <p class="section-desc">
-        A selection of completed HVAC and MEP engineering projects across Dubai and the UAE.
+        Typical HVAC and MEP systems our team installs and maintains for homes and businesses in Dubai.
       </p>
     </header>
 
@@ -663,21 +773,21 @@
         <div class="project-card__img-wrap">
           <img
             src="images/project-tower.jpg"
-            alt="Interior mechanical room of a commercial tower in Dubai — chillers, pumps, and industrial piping systems"
+            alt="Mechanical room with chillers, pumps and piping systems"
             class="project-card__img"
             loading="lazy"
           >
           <div class="project-card__overlay" aria-hidden="true"></div>
           <div class="project-card__tags">
             <span class="project-tag project-tag--type">HVAC Engineering</span>
-            <span class="project-tag project-tag--location">Dubai, UAE</span>
+            <span class="project-tag project-tag--location">Commercial</span>
           </div>
         </div>
         <div class="project-card__body">
           <p class="project-card__system">Central Chilled Water + AHU System</p>
           <h3 class="project-card__title">Commercial Tower HVAC Installation</h3>
           <a href="#contact" class="project-card__link" aria-label="Enquire about the Commercial Tower HVAC Installation project">
-            View Project
+            Get a Quote
             <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -687,18 +797,18 @@
 
       <article class="project-card reveal" style="transition-delay:0.1s">
         <div class="project-card__img-wrap">
-          <div class="project-card__img-bg project-card__img-bg--kitchen" role="img" aria-label="Commercial kitchen ventilation installation"></div>
+          <img src="images/projects/kitchen.webp" alt="Commercial kitchen ventilation installation" class="project-card__img" loading="lazy" decoding="async">
           <div class="project-card__overlay" aria-hidden="true"></div>
           <div class="project-card__tags">
             <span class="project-tag project-tag--type">Ventilation</span>
-            <span class="project-tag project-tag--location">Dubai</span>
+            <span class="project-tag project-tag--location">Restaurants</span>
           </div>
         </div>
         <div class="project-card__body">
           <p class="project-card__system">MEP Ventilation + Exhaust</p>
           <h3 class="project-card__title">Kitchen Ventilation System</h3>
           <a href="#contact" class="project-card__link" aria-label="Enquire about the Kitchen Ventilation System project">
-            View Project
+            Get a Quote
             <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -717,14 +827,14 @@
           <div class="project-card__overlay" aria-hidden="true"></div>
           <div class="project-card__tags">
             <span class="project-tag project-tag--type">VRV System</span>
-            <span class="project-tag project-tag--location">Abu Dhabi</span>
+            <span class="project-tag project-tag--location">Offices &amp; Mixed-use</span>
           </div>
         </div>
         <div class="project-card__body">
-          <p class="project-card__system">Daikin VRV Multi-Zone System</p>
+          <p class="project-card__system">VRV / VRF Multi-Zone System</p>
           <h3 class="project-card__title">Multi-Zone VRV Installation</h3>
           <a href="#contact" class="project-card__link" aria-label="Enquire about the Multi-Zone VRV Installation project">
-            View Project
+            Get a Quote
             <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -734,18 +844,18 @@
 
       <article class="project-card reveal" style="transition-delay:0.2s">
         <div class="project-card__img-wrap">
-          <div class="project-card__img-bg project-card__img-bg--smoke" role="img" aria-label="Building smoke extraction system"></div>
+          <img src="images/projects/smoke.webp" alt="Building smoke extraction system" class="project-card__img" loading="lazy" decoding="async">
           <div class="project-card__overlay" aria-hidden="true"></div>
           <div class="project-card__tags">
             <span class="project-tag project-tag--type">Smoke Extraction</span>
-            <span class="project-tag project-tag--location">Dubai</span>
+            <span class="project-tag project-tag--location">Buildings</span>
           </div>
         </div>
         <div class="project-card__body">
           <p class="project-card__system">Pressurization + Mechanical Exhaust</p>
           <h3 class="project-card__title">Building Smoke Extraction System</h3>
           <a href="#contact" class="project-card__link" aria-label="Enquire about the Building Smoke Extraction project">
-            View Project
+            Get a Quote
             <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -755,18 +865,18 @@
 
       <article class="project-card reveal" style="transition-delay:0.25s">
         <div class="project-card__img-wrap">
-          <div class="project-card__img-bg project-card__img-bg--villa" role="img" aria-label="Luxury villa air conditioning installation"></div>
+          <img src="images/projects/villa.webp" alt="Luxury villa air conditioning installation" class="project-card__img" loading="lazy" decoding="async">
           <div class="project-card__overlay" aria-hidden="true"></div>
           <div class="project-card__tags">
             <span class="project-tag project-tag--type">Air Conditioning</span>
-            <span class="project-tag project-tag--location">Palm Jumeirah</span>
+            <span class="project-tag project-tag--location">Villas</span>
           </div>
         </div>
         <div class="project-card__body">
           <p class="project-card__system">Ducted Split System</p>
           <h3 class="project-card__title">Luxury Villa AC System</h3>
           <a href="#contact" class="project-card__link" aria-label="Enquire about the Luxury Villa AC System project">
-            View Project
+            Get a Quote
             <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -776,6 +886,87 @@
 
     </div>
 
+  </div>
+</section>
+
+<!-- ============================================================
+     REAL WORK (reels-style carousel of team photos & muted clips)
+============================================================ -->
+<section id="work" class="work section" aria-labelledby="work-heading">
+  <div class="container">
+
+    <div class="work__head reveal">
+      <header class="work__intro">
+        <span class="section-label">Real Work</span>
+        <h2 id="work-heading" class="section-title">Our Team On Site</h2>
+        <p class="section-desc">
+          Unedited photos and clips from installations by our technicians: ductwork,
+          air handling units, VRF systems and control panels.
+        </p>
+      </header>
+    </div>
+  </div>
+
+  <div class="work__stage">
+    <button type="button" class="work__arrow work__arrow--prev" data-dir="-1" aria-label="Previous">
+      <svg width="22" height="22" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M12.5 4.5L7 10L12.5 15.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="work__track" tabindex="0" role="region" aria-label="Photos and videos of our work">
+        <figure class="reel">
+          <video class="reel__media" muted loop playsinline preload="none" poster="media/work/rooftop-ductwork-poster.webp" data-autoplay aria-label="Rooftop ductwork installation"><source src="media/work/rooftop-ductwork.mp4" type="video/mp4"></video>
+          <figcaption class="reel__cap">Rooftop ductwork installation</figcaption>
+        </figure>
+        <figure class="reel">
+          <img class="reel__media" src="media/work/ahu-installation.webp" alt="Air handling unit installation" loading="lazy" decoding="async">
+          <figcaption class="reel__cap">Air handling unit installation</figcaption>
+        </figure>
+        <figure class="reel">
+          <video class="reel__media" muted loop playsinline preload="none" poster="media/work/rooftop-vrf-poster.webp" data-autoplay aria-label="VRF outdoor units and ducting"><source src="media/work/rooftop-vrf.mp4" type="video/mp4"></video>
+          <figcaption class="reel__cap">VRF outdoor units and ducting</figcaption>
+        </figure>
+        <figure class="reel">
+          <img class="reel__media" src="media/work/control-panel-wiring.webp" alt="HVAC control panel wiring" loading="lazy" decoding="async">
+          <figcaption class="reel__cap">HVAC control panel wiring</figcaption>
+        </figure>
+        <figure class="reel">
+          <video class="reel__media" muted loop playsinline preload="none" poster="media/work/plant-room-ahu-poster.webp" data-autoplay aria-label="Plant room works"><source src="media/work/plant-room-ahu.mp4" type="video/mp4"></video>
+          <figcaption class="reel__cap">Plant room works</figcaption>
+        </figure>
+        <figure class="reel">
+          <img class="reel__media" src="media/work/plc-controller.webp" alt="PLC controller set-up" loading="lazy" decoding="async">
+          <figcaption class="reel__cap">PLC controller set-up</figcaption>
+        </figure>
+        <figure class="reel">
+          <video class="reel__media" muted loop playsinline preload="none" poster="media/work/rooftop-ducts-poster.webp" data-autoplay aria-label="Insulated duct runs"><source src="media/work/rooftop-ducts.mp4" type="video/mp4"></video>
+          <figcaption class="reel__cap">Insulated duct runs</figcaption>
+        </figure>
+        <figure class="reel">
+          <img class="reel__media" src="media/work/touch-control-panel.webp" alt="Touch-screen climate controller" loading="lazy" decoding="async">
+          <figcaption class="reel__cap">Touch-screen climate controller</figcaption>
+        </figure>
+        <figure class="reel">
+          <video class="reel__media" muted loop playsinline preload="none" poster="media/work/rooftop-units-poster.webp" data-autoplay aria-label="Rooftop units placement"><source src="media/work/rooftop-units.mp4" type="video/mp4"></video>
+          <figcaption class="reel__cap">Rooftop units placement</figcaption>
+        </figure>
+        <figure class="reel">
+          <img class="reel__media" src="media/work/control-cabinet.webp" alt="Control cabinet assembly" loading="lazy" decoding="async">
+          <figcaption class="reel__cap">Control cabinet assembly</figcaption>
+        </figure>
+        <figure class="reel">
+          <img class="reel__media" src="media/work/power-distribution-panel.webp" alt="Power distribution panel" loading="lazy" decoding="async">
+          <figcaption class="reel__cap">Power distribution panel</figcaption>
+        </figure>
+  </div>
+    <button type="button" class="work__arrow work__arrow--next" data-dir="1" aria-label="Next">
+      <svg width="22" height="22" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M7.5 4.5L13 10L7.5 15.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+
+  <div class="container">
+    <div class="work__progress" aria-hidden="true"><span class="work__progress-bar"></span></div>
+    <div class="work__cta reveal">
+      <a href="#contact" class="btn btn--primary btn--lg">Discuss Your Project</a>
+    </div>
   </div>
 </section>
 
@@ -917,7 +1108,7 @@
         </button>
         <div class="faq__answer" id="faq-ans-2" role="region" aria-labelledby="faq-q-2">
           <div class="faq__answer-inner">
-            <p>Yes. As a Dubai Municipality approved engineering firm we manage the complete submission and approval process for HVAC and MEP drawings — including initial submissions, NOC coordination, and inspection support.</p>
+            <p>Yes. We prepare HVAC and MEP drawings and coordinate the submission and approval process with Dubai Municipality, Civil Defence and building management, including NOCs and inspection support.</p>
           </div>
         </div>
       </div>
@@ -1002,6 +1193,26 @@
         </div>
       </div>
 
+      <div class="faq__item">
+        <button
+          class="faq__question"
+          type="button"
+          aria-expanded="false"
+          aria-controls="faq-ans-7"
+          id="faq-q-7"
+        >
+          Do you also handle electrical, painting and other maintenance works?
+          <svg class="faq__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="faq__answer" id="faq-ans-7" role="region" aria-labelledby="faq-q-7">
+          <div class="faq__answer-inner">
+            <p>Yes. Our trade licence covers electrical and plumbing repairs, painting, plaster, tiling, carpentry and building cleaning, so one team can handle the whole job.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
 
   </div>
@@ -1033,8 +1244,8 @@
             </svg>
           </div>
           <div>
-            <strong>Location</strong>
-            <span>Dubai, United Arab Emirates</span>
+            <strong>Office</strong>
+            <span>Office 804-65, Naif, Deira, Dubai, UAE</span>
           </div>
         </li>
 
@@ -1045,8 +1256,8 @@
             </svg>
           </div>
           <div>
-            <strong>Phone</strong>
-            <a href="tel:+97140000000">+971 4 000 0000</a>
+            <strong>Phone &amp; WhatsApp</strong>
+            <a href="tel:+971501357591">+971 50 135 7591</a>
           </div>
         </li>
 
@@ -1059,7 +1270,7 @@
           </div>
           <div>
             <strong>Email</strong>
-            <a href="mailto:info@apexclimate.ae">info@apexclimate.ae</a>
+            <a href="mailto:sapat.hvac.ae@gmail.com">sapat.hvac.ae@gmail.com</a>
           </div>
         </li>
 
@@ -1074,7 +1285,7 @@
             <strong>Working Hours</strong>
             <span>Mon – Sat: 8:00 AM – 6:00 PM</span>
             <span class="contact__emergency">
-              24/7 Emergency: <a href="tel:+97140000000">+971 4 000 0000</a>
+              24/7 Emergency: <a href="tel:+971501357591">+971 50 135 7591</a>
             </span>
           </div>
         </li>
@@ -1128,18 +1339,15 @@
           <div class="form-group">
             <label for="email" class="form-label">
               Email
-              <span class="form-req" aria-hidden="true">*</span>
-              <span class="sr-only">(required)</span>
+              <span class="sr-only">(optional)</span>
             </label>
             <input
               type="email"
               id="email"
               name="email"
               class="form-input"
-              placeholder="your@email.com"
+              placeholder="your@email.com (optional)"
               autocomplete="email"
-              required
-              aria-required="true"
               aria-describedby="email-err"
             >
             <span class="form-error" id="email-err" role="alert" aria-live="polite"></span>
@@ -1158,7 +1366,10 @@
             <option value="smoke">Smoke Extraction</option>
             <option value="plumbing">Plumbing</option>
             <option value="heating">Heating</option>
-            <option value="amc">Annual Maintenance (AMC)</option>
+            <option value="amc">AC Maintenance / AMC</option>
+            <option value="electrical">Electrical Works</option>
+            <option value="fitout">Painting, Plaster &amp; Tiling</option>
+            <option value="cleaning">Building Cleaning</option>
             <option value="other">Other / Not Sure</option>
           </select>
         </div>
@@ -1183,7 +1394,7 @@
         </div>
 
         <button type="submit" class="btn btn--primary btn--full btn--lg" id="submitBtn">
-          <span class="btn-label">Send Request</span>
+          <span class="btn-label">Send via WhatsApp</span>
           <span class="btn-loading" hidden aria-hidden="true">
             <svg class="spinner" width="18" height="18" viewBox="0 0 18 18" fill="none">
               <circle cx="9" cy="9" r="7" stroke="white" stroke-width="2" stroke-dasharray="22 22" stroke-linecap="round"/>
@@ -1198,8 +1409,8 @@
             <path d="M7 11L10 14L15 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           <div>
-            <strong>Message sent!</strong>
-            We'll be in touch within one business day.
+            <strong>Opening WhatsApp…</strong>
+            Press send in WhatsApp and our team will reply shortly.
           </div>
         </div>
 
@@ -1218,18 +1429,18 @@
   <div class="container footer__inner">
 
     <div class="footer__brand">
-      <a href="#hero" class="navbar__logo footer__logo-link" aria-label="Sapat Engineering — Home">
+      <a href="#hero" class="navbar__logo footer__logo-link" aria-label="Sapat home">
         <span class="brand-mark" aria-hidden="true">
           <img src="images/sapat-icon.webp" alt="">
         </span>
         <span class="brand-copy">
-          <span class="brand-name">Sapat Engineering</span>
-          <span class="brand-sub">HVAC &amp; Ventilation &bull; Dubai</span>
+          <span class="brand-name">Sapat</span>
+          <span class="brand-sub">HVAC &amp; Technical Services &bull; Dubai</span>
         </span>
       </a>
       <p class="footer__tagline">
-        High-performance HVAC and MEP engineering solutions for Dubai and the UAE.
-        Municipality approved. Senior engineers. End-to-end delivery.
+        HVAC, AC maintenance, MEP and fit-out services in Dubai.
+        Licensed company. Skilled technicians. One team for every trade.
       </p>
     </div>
 
@@ -1243,6 +1454,8 @@
           <li><a href="#service-ventilation">Ventilation</a></li>
           <li><a href="#service-smoke">Smoke Extraction</a></li>
           <li><a href="#service-plumbing">Plumbing &amp; Heating</a></li>
+          <li><a href="#service-amc">AC Maintenance &amp; AMC</a></li>
+          <li><a href="#service-fitout">Fit-Out Works</a></li>
         </ul>
       </div>
       <div class="footer__nav-col">
@@ -1250,6 +1463,7 @@
         <ul role="list">
           <li><a href="#about">About Us</a></li>
           <li><a href="#projects">Projects</a></li>
+          <li><a href="#work">Our Work</a></li>
           <li><a href="#process">Our Process</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -1258,11 +1472,12 @@
       <div class="footer__nav-col">
         <h3 class="footer__nav-heading">Contact</h3>
         <ul role="list">
-          <li>Dubai, UAE</li>
-          <li><a href="tel:+97140000000">+971 4 000 0000</a></li>
-          <li><a href="mailto:info@apexclimate.ae">info@apexclimate.ae</a></li>
+          <li>Office 804-65, Naif, Deira, Dubai</li>
+          <li><a href="tel:+971501357591">+971 50 135 7591</a></li>
+          <li><a href="mailto:sapat.hvac.ae@gmail.com">sapat.hvac.ae@gmail.com</a></li>
           <li>Mon–Sat: 8:00 AM – 6:00 PM</li>
           <li><em>24/7 Emergency Response</em></li>
+          <li><a href="https://www.instagram.com/sapat.hvac/" target="_blank" rel="noopener noreferrer">Instagram: @sapat.hvac</a></li>
         </ul>
       </div>
     </nav>
@@ -1271,32 +1486,43 @@
 
   <div class="footer__bottom">
     <div class="container footer__bottom-inner">
-      <p>&copy; <span id="footerYear"></span> Sapat Engineering. All rights reserved.</p>
-      <p>Dubai, United Arab Emirates</p>
+      <p>&copy; <span id="footerYear"></span> SAPAT BUILDING CLEANING SERVICES L.L.C. All rights reserved.</p>
+      <p>Trade Licence No. 1597573 &middot; Dubai, United Arab Emirates</p>
     </div>
   </div>
 </footer>
 
+<nav class="mobile-cta" aria-label="Quick contact">
+  <a class="mobile-cta__btn mobile-cta__btn--call" href="tel:+971501357591">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 16.4v2.9a1.9 1.9 0 0 1-2.1 1.9 18.8 18.8 0 0 1-8.2-2.9 18.5 18.5 0 0 1-5.7-5.7A18.8 18.8 0 0 1 2.1 4.4 1.9 1.9 0 0 1 4 2.3h2.9a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.7a1.9 1.9 0 0 1-.4 2L7.8 9.8a15.2 15.2 0 0 0 5.7 5.7l1.2-1.2a1.9 1.9 0 0 1 2-.4c.9.3 1.8.6 2.7.7a1.9 1.9 0 0 1 1.6 1.8Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>Call</span>
+  </a>
+  <a class="mobile-cta__btn mobile-cta__btn--wa" href="https://wa.me/971501357591?text=Hello%20Sapat%2C%20I%20would%20like%20a%20quote." target="_blank" rel="noopener noreferrer">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 11.2A8.5 8.5 0 0 1 8 19.5L4 20.5L5 16.6A8.5 8.5 0 1 1 20.5 11.2Z" stroke="currentColor" stroke-width="1.8"/></svg>
+    <span>WhatsApp</span>
+  </a>
+  <a class="mobile-cta__btn mobile-cta__btn--quote" href="#contact"><span>Free Quote</span></a>
+</nav>
+
 <nav class="floating-contact" aria-label="Quick contact options">
-  <a class="floating-contact__link floating-contact__link--whatsapp" href="https://wa.me/97140000000" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
-    <svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M20.5 11.2A8.5 8.5 0 0 1 8 19.5L4 20.5L5 16.6A8.5 8.5 0 1 1 20.5 11.2Z" stroke="currentColor" stroke-width="1.8"/>
-      <path d="M9 8.5C9.4 8.1 9.8 8.2 10.1 8.7L10.8 9.8C11 10.1 11 10.4 10.8 10.7L10.2 11.3C10.8 12.5 11.5 13.2 12.7 13.8L13.3 13.2C13.6 13 13.9 13 14.2 13.2L15.3 13.9C15.8 14.2 15.9 14.6 15.5 15C15.1 15.5 14.6 15.8 14 15.8C11.2 15.5 8.5 12.8 8.2 10C8.2 9.4 8.5 8.9 9 8.5Z" fill="currentColor"/>
+  <a class="floating-contact__link floating-contact__link--whatsapp" href="https://wa.me/971501357591?text=Hello%20Sapat%2C%20I%20would%20like%20a%20quote." target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
     </svg>
   </a>
-  <a class="floating-contact__link floating-contact__link--phone" href="tel:+97140000000" aria-label="Call Sapat Engineering">
-    <svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M6.8 3.5L9.4 3L11 7.2L8.9 8.6C9.8 10.7 11.3 12.2 13.4 13.1L14.8 11L19 12.6L18.5 15.2C18.3 16.2 17.4 17 16.4 16.9C9.6 16.2 7.8 14.4 7.1 7.6C7 6.6 7.8 3.7 6.8 3.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+  <a class="floating-contact__link floating-contact__link--phone" href="tel:+971501357591" aria-label="Call Sapat">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
     </svg>
   </a>
-  <a class="floating-contact__link floating-contact__link--email" href="mailto:info@apexclimate.ae" aria-label="Email Sapat Engineering">
-    <svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/>
-      <path d="M4 7L12 13L20 7" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+  <a class="floating-contact__link floating-contact__link--email" href="mailto:sapat.hvac.ae@gmail.com" aria-label="Email Sapat">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <rect x="2" y="4" width="20" height="16" rx="2"/>
+      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
     </svg>
   </a>
 </nav>
 
-<script src="js/main.js"></script>
+<script src="js/main.js?v=20261126d"></script>
 </body>
 </html>
