@@ -167,7 +167,7 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
 /* ----------------------------------------------------------------
    6.  SECTION SPACING & SHARED STYLES
 ---------------------------------------------------------------- */
-.section      { padding: var(--section-y) 0; }
+.section      { padding-block: var(--section-y); }
 .section--dark  { background-color: var(--c-dark); color: var(--c-white); }
 .section--light { background-color: var(--c-off-white); }
 
@@ -998,7 +998,7 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
   grid-template-columns: 1fr 1fr;
   gap: var(--sp-20);
   align-items: center;
-  padding: var(--section-y) 0;
+  padding-block: var(--section-y);
 }
 
 .about__visual { position: relative; }
@@ -1530,7 +1530,7 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
   grid-template-columns: 1fr 1.15fr;
   gap: var(--sp-20);
   align-items: start;
-  padding: var(--section-y) 0;
+  padding-block: var(--section-y);
 }
 
 .contact__intro {
@@ -2162,7 +2162,7 @@ body:not(.light-mode) .form-success div {
   .services__grid--two { grid-template-columns: 1fr; }
 
   /* About */
-  .about__inner { grid-template-columns: 1fr; gap: var(--sp-10); padding: var(--section-y) 0; }
+  .about__inner { grid-template-columns: 1fr; gap: var(--sp-10); padding-block: var(--section-y); }
   .about__img   { height: 380px; }
 
   /* Why us */
@@ -2187,7 +2187,7 @@ body:not(.light-mode) .form-success div {
   .faq__sidebar  { position: static; }
 
   /* Contact */
-  .contact__inner { grid-template-columns: 1fr; gap: var(--sp-10); padding: var(--section-y) 0; }
+  .contact__inner { grid-template-columns: 1fr; gap: var(--sp-10); padding-block: var(--section-y); }
 
   /* Footer */
   .footer__inner { grid-template-columns: 1fr; gap: var(--sp-10); }
@@ -2300,6 +2300,13 @@ body:not(.light-mode) .form-success div {
 
   .hero__badge:not(.hero__badge--alt),
   .hero__badge--alt { display: none; }
+}
+
+/* Long button labels (RU/AR) must wrap instead of pushing the page sideways. */
+@media (max-width: 480px) {
+  .btn { white-space: normal; text-align: center; max-width: 100%; }
+  .container > * { min-width: 0; }
+  .section-title { overflow-wrap: break-word; hyphens: auto; }
 }
 
 /* Light mode contrast pass: never use dark-section white text on pale surfaces. */
